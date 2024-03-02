@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
 @Component
@@ -41,6 +42,7 @@ public class FakeStoreProductClient {
         FakeStoreProductDTO fakeStoreProductDTO=response.getBody();
         if(fakeStoreProductDTO==null)
         {
+            System.out.println("this is fake store output");
             throw new NotFoundException("Product with id"+ id+" not found");
 
         }
